@@ -3,10 +3,10 @@ from setuptools import setup, find_packages
 setup(
     name='led-ml',
     # 0.1.0 is the correct and standard starting version for an initial development release
-    version='0.1.0',
+    version='0.1.2',
     description='Layer-wise Energy Dissipation visualisation for LLM/ML',
     # Reads the README documentation from the parent directory for PyPI rendering
-    long_description=open('../README.md', encoding='utf-8').read() if __name__ == '__main__' else '',
+    long_description=open('./README.md', encoding='utf-8').read() if __name__ == '__main__' else '',
     long_description_content_type='text/markdown',
     author='dlytik',
     author_email='dlytiks@gmail.com',
@@ -14,6 +14,7 @@ setup(
     project_urls={
         'Repository': 'https://github.com/dlytik/led-ml',
         'Bug Tracker': 'https://github.com/dlytik/led-ml/issues',
+        'Zenodo Paper': 'https://zenodo.org/records/21967890',
     },
     packages=find_packages(),
     package_data={

@@ -4,7 +4,15 @@ import json
 from pathlib import Path
 from importlib import resources
 from .led_core import led_core
+import warnings
+warnings.filterwarnings("ignore", message=".*LibreSSL.*", category=Warning)
 
+# Silence the specific urllib3 NotOpenSSLWarning category across all modules
+warnings.filterwarnings(
+    "ignore",
+    category=Warning,
+    module="urllib3"
+)
 
 def load_supported_models():
     """Load supported models configuration from package resource."""
