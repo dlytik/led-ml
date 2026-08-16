@@ -29,26 +29,25 @@ These files contain complete diagnostic metrics captured during inference on a s
   - Memory footprint per layer
   - Execution latency per hook
 
+
 **Structure Example**:
 ```json
 {
-  "model": "Qwen/Qwen2.5-7B",
-  "num_layers": 28,
-  "mode": "trajectory",
   "prompt": "What is the color of chlorophyll?",
-  "response": "Chlorophyll is green in color.",
+  "model": "Qwen/Qwen2.5-7B",
+  "torch_dtype": "torch.float16",
+  "mode": "trajectory",
+  "num_layers": 28
+  "ten_pct_cnt": 358,
   "layers": [
     {
       "layer_id": 0,
       "forward_activations": [...],
-      "jacobians": [...],
-      "activation_stats": {...},
-      "latency_ms": 2.34
+      "Backward_Grads": [...],
+      "hook_overhead_ms": 2.34
     },
     ...
   ],
-  "total_ram_bytes": 125000000,
-  "timestamp": "2024-08-16T12:34:56"
 }
 ```
 
@@ -98,10 +97,10 @@ Layer L01: ░░░░░░░░░░▲░░░░░░░░░░░░
 
 ### Character Encoding
 
-- `░` (Light shade) — Low or zero activation/gradient
-- `▒` (Medium shade) — Medium activation/gradient  
-- `█` (Dark shade) — High activation/gradient
-- `▲` (Triangle) — Peak activation point
+- `░` (Light shade) — zero activation/gradient
+- `█` (Dark shade) — High gradient
+- `▲` (Triangle) — Positive activation point
+- '▼' (Down Triangle) - Negative activation point
 
 ### Interpreting Patterns
 
@@ -164,14 +163,9 @@ led_viz.text_led(diagnostics)  # Print text-based visualization
 Recommended output structure:
 ```
 output/
-├── {model_family}/
-│   ├── {model_name}.json              # Diagnostic metrics
-│   ├── {model_name}_standard.gif      # Standard visualization
-│   ├── {model_name}_extended.gif      # Extended visualization
-│   └── {query_hash}/
-│       ├── {model_name}_{query}_metrics.json
-│       ├── {model_name}_{query}_standard.gif
-│       └── {model_name}_{query}_extended.gif
+├── {model_name}.json              # Diagnostic metrics
+├── {model_name}_standard.gif      # Standard visualization
+├── {model_name}_extended.gif      # Extended visualization
 ```
 
 This organization allows easy comparison across:
