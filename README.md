@@ -104,10 +104,6 @@ L02   | ░░░░░░░░░░▲░░░░░░░░░░░░░
 - **Model Inspection**: Visualize information flow through model layers
 - **Research**: Analyze model behavior and layer importance
 
-## Documentation
-
-For additional setup and development information, see [PACKAGE_SETUP.md](https://github.com/jabulu/led-ml/blob/main/PACKAGE_SETUP.md)
-
 ## License
 
 See LICENSE file for details.
