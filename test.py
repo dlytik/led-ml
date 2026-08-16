@@ -13,7 +13,7 @@ obj = led_ml.led_core(mode="trajectory")
 print(f"Models supported by package, {obj.get_supported_models()}")
 
 # Run the supported model
-answer = obj.run_model(prompt, model_family="qwen2")
+answer = obj.run_model(prompt, model_family="qwen2", max_new_tokens=2)
 print(f"Response is : {answer}")
 
 # Get dump and update the json

@@ -346,6 +346,8 @@ class led_core:
                 device = "cuda"
             elif torch.backends.mps.is_available():
                 device = "mps"
+                # Set the MPS high watermark ratio to 0.0
+                os.environ["PYTORCH_MPS_HIGH_WATERMARK_RATIO"] = "0.0"
             else:
                 device = "cpu"
 
