@@ -1,0 +1,3 @@
+include README.md
+include PACKAGE_SETUP.md
+recursive-include led_ml *.json

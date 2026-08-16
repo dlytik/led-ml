@@ -1,0 +1,20 @@
+{
+  "qwen2": {
+    "model_name": "Qwen/Qwen2.5-7B",
+    "norm_attr": "post_attention_layernorm",
+    "attn_attr": "self_attn.o_proj",
+    "layer_container": "model.layers"
+  },
+  "openchat": {
+    "model_name": "openchat/openchat-3.5-0106",
+    "norm_attr": "post_attention_layernorm",
+    "attn_attr": "self_attn.o_proj",
+    "layer_container": "model.layers"
+  },
+  "mistral": {
+    "model_name": "mistralai/Mistral-7B-Instruct-v0.3",
+    "norm_attr": "post_feedforward_layernorm",
+    "attn_attr": "self_attn.o_proj",
+    "layer_container": "model.layers"
+  }
+}
