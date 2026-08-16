@@ -89,6 +89,24 @@ L02   | ░░░░░░░░░░▲░░░░░░░░░░░░░
 ...
 ```
 
+## GIF Visualization Examples
+
+### Standard View (First 100 Neurons)
+
+Shows activation patterns and gradients for the first 100 neurons across all layers:
+
+![OpenChat 3.5 Standard Visualization](output/openchat-openchat-3.5-0106_standard.gif)
+
+### Extended View (Top/Bottom Activations + Top Gradients)
+
+Shows selective neuron activity - top 30% and bottom 30% of activations, plus top 30% of gradients:
+
+![OpenChat 3.5 Extended Visualization](output/openchat-openchat-3.5-0106_extended.gif)
+
+*Sample output from OpenChat-3.5 model with prompt "What is the color of chlorophyll?"*
+
+For more examples and detailed interpretation guide, see [OUTPUT.md](OUTPUT.md)
+
 ## Use Cases
 
 - **Performance Profiling**: Identify latency bottlenecks in model inference
