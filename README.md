@@ -10,14 +10,6 @@
 - **Visualization**: Generate ASCII text visualizations and GIF-based layer maps
 - **Model Support**: Works with popular models via the `transformers` library
 
-## Installation
-
-Install from PyPI:
-
-```bash
-pip install led-ml
-```
-
 ## Package Contents
 
 The `led_ml` package includes:
