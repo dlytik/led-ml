@@ -97,7 +97,7 @@ L02   | ░░░░░░░░░░▲░░░░░░░░░░░░░
 
 Shows activation patterns and gradients for the first 100 neurons across all layers:
 
-![OpenChat 3.5 Standard Visualization](https://githubusercontent.com)
+![OpenChat 3.5 Standard Visualization](https://dlytik/led-ml/outout/openchat-openchat-3.5-0106_standard.gif
 
 ### Extended View (Top/Bottom Activations + Top Gradients)
 
