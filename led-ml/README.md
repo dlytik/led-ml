@@ -30,6 +30,7 @@ The package requires:
 - `transformers>=4.0.0`
 - `matplotlib>=3.5.0`
 - `pillow>=9.0.0`
+- `urllib3<2.0`
 
 These are automatically installed with `pip install led-ml`.
 
