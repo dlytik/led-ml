@@ -103,7 +103,7 @@ Shows activation patterns and gradients for the first 100 neurons across all lay
 
 Shows selective neuron activity - 10% of (top 30% and bottom 30% of activations, plus top 30% of gradients):
 
-![OpenChat 3.5 Extended Visualization](output/openchat-openchat-3.5-0106_extended.gif)
+![OpenChat 3.5 Standard Visualization](https://github.com/dlytik/led-ml/blob/main/output/openchat-openchat-3.5-0106_extended.gif)
 
 *Sample output from OpenChat-3.5 model with prompt "What is the color of chlorophyll?"*
 
