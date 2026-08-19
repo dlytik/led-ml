@@ -19,7 +19,7 @@ if not long_desc.strip():
 
 setup(
     name='led-ml',
-    version='0.1.5',  # Incremented to reflect the clean configuration changes
+    version='0.1.6',  # Incremented to reflect the clean configuration changes
     description='Layer-wise Energy Dissipation visualisation for LLM/ML',
     long_description=long_desc,
     long_description_content_type="text/markdown",  # Valid rendering format for PyPI
