@@ -81,13 +81,12 @@ To filter out low-variance background noise, independent upper and lower floor b
 \]
 Neuron indices clearing either boundary are admitted into the threshold activation set $\Omega_l$:
 \[
-\Omega_l = \left\{ j \in [0, d-1] \;\middle\vert{}\; \mathbf{a}_l(j) > \tau_{\text{pos}} \;\lor\; \mathbf{a}_l(j) < \tau_{\text{neg}} \right{}
+\Omega_l = \lbrace j \in [0, d-1] \mid \mathbf{a}_l(j) > \tau_{\text{pos}} \lor \mathbf{a}_l(j) < \tau_{\text{neg}} \rbrace
 \]
 The global active density ratio per layer is formulated as:
 \[
 \text{Active \%} = \frac{|\Omega_l|}{d} \times 100
 \]
-
 \subsubsection*{4. Cumulative Quantile Segmentation \& Sign Mapping}
 Let $\mathbf{a}_{\Omega_l}$ be the sub-vector containing only valid thresholded features. The 30th and 70th percentile cutoffs~\cite{paul2025quantile} ~\cite{nanoquant2026efficient} are derived from this filtered distribution:
 \[
@@ -122,10 +121,12 @@ S_{\text{last}} = \Big[ f\big(\mathbf{v}_{\text{bottom}}(j)\big) \Big]_{j=d-m}^{
  \end{cases}
 \]
 The density counts within these discrete tracking windows are calculated using the indicator function $\mathbb{I}$:
+\[
 \begin{aligned}
 \text{Count}_{\text{first}} &= \frac{1}{m} \sum_{j=0}^{m-1} \mathbb{I}\left(\mathbf{v}_{\text{top}}(j) \neq 0\right) \\[1ex]
 \text{Count}_{\text{last}}  &= \frac{1}{m} \sum_{j=d-m}^{d-1} \mathbb{I}\left(\mathbf{v}_{\text{bottom}}(j) \neq 0\right)
 \end{aligned}
+\]
 
 \subsubsection*{6. Structural Top-$K$ Neuronal Profiling}
 The model isolates the structural identities of the top $K=3$ absolute highest-magnitude neurons, uses true value to display the signs of magnitude:
@@ -179,7 +180,7 @@ The backward tensor hook ~\cite{paszke2017automatic} isolates the structural spa
 \subsubsection*{3. Instantaneous Gradient Noise Thresholding}
 To measure structural gradient sensitivity while ignoring low-magnitude variance, an magnitude vector $|\mathbf{g}_l|$ is calculated. A dynamic noise cutoff floor $\gamma_l$ is derived using the upper 30\% bound of peak gradient intensity:
 \[
-\gamma_l = 0.3 \cdot \max_{j} \left| \left \mathbf{g}_l(j) \right|
+\gamma_l = 0.3 \cdot \max_{j} \left| \mathbf{g}_l(j) \right|
 \]
 A binary indicator state vector $\mathbf{b}_l \in \{0, 1\}^d$ maps elements clearing this dynamic threshold:
 \[
@@ -307,13 +308,13 @@ Where $\mathbin{\parallel}$ represents the string concatenation operator. The en
 \paragraph{Dual-Stream Plot Rendering Configurations}
 The standard visualization canvas renders a side-by-side subplot tracking the \textit{Forward Activations Profile} and the \textit{Jacobian Causal Sensitivity (VJP)}
 
-\subparagraph{1. Standard Character Overlay Visualization:}
+\paragraph{Standard Character Overlay Visualization:}
 The standard visualization at a target resolution of 110 dots per inch (DPI).  The numeric frame matrix $\mathbf{M}_{\text{std}}$ is mapped directly to individual pixels
 
-\subparagraph{2. High-Resolution Numeric Pixel Matrix View:}
+\paragraph{High-Resolution Numeric Pixel Matrix View:}
 The extended pixel matrix canvas utilizes a high-resolution layout configured at 130 DPI to show fine-grained architectural patterns. The numeric frame matrix $\mathbf{M}_{\text{extended}}$ is mapped directly to individual pixels
 
-\paragraph{C. Simultaneous Multi-Frame Image Compiling}
+\paragraph{Simultaneous Multi-Frame Image Compiling}
 Let $F_{\text{fps}}$ define the desired visualization frame rate. Individual frame canvas buffers are captured sequentially in memory and stacked into a final animated image sequence. The inter-frame display delay parameter $\Delta T_{\text{frame}}$ is calculated in milliseconds as:
 \[
 \Delta T_{\text{frame}} = \left\lfloor \frac{1000}{F_{\text{fps}}} \right\rfloor
