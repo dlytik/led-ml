@@ -1,7 +1,9 @@
 # LED-ML
 
 *Paper*: [LED-ML v0.1.0](https://zenodo.org/records/21967890) [DOI: 10.5281/zenodo.21967890]
+
 *PyPi package*: https://pypi.org/project/led-ml [pip install led-ml]
+
 **LED-ML** (Layer Extraction & Diagnostics with Machine Learning) is a lightweight runtime diagnostics package for large language models. It attaches to model layers, captures activation and gradient signals, and exposes structured telemetry for analysis, latency profiling, RAM footprint checks, and visualization.
 
 ## Features
